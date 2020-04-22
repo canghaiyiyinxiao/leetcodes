@@ -38,4 +38,14 @@ class Solution {
             return intArrayOf()
         }
     }
+	
+	fun twoSumBetter(nums: IntArray, target: Int): IntArray {
+        var map = hashMapOf<Int,Int>()
+        nums.forEachIndexed { index, i ->
+            val result = target - i
+            if (map.containsKey(result)) return intArrayOf(index,map[result]!!)
+            map.put(i, index);
+        }
+        return intArrayOf()
+    }
 }
